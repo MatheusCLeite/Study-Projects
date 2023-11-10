@@ -1,3 +1,37 @@
+#Problema de negócio: O teste hidrostático extintor é um procedimento estabelecido pelas normas da ABNT NBR 12962/2016, que determinam que todos os extintores devem ser testados a cada cinco anos, com a finalidade de identificar eventuais vazamentos, além de também verificar a resistência do material do extintor.
+#Com isso, o teste hidrostático extintor pode ser realizado em baixa e alta pressão, de acordo com estas normas em questão. O procedimento é realizado por profissionais técnicos da área e com a utilização de aparelhos específicos e apropriados para o teste, visto que eles devem fornecer resultados com exatidão.
+#Seria possível usar Machine Learning para prever o funcionamento de um extintor de incêndio com base em simulações feitas em computador e assim incluir uma camada adicional de segurança nas operações de uma empresa?
+#Usando dados reais disponíveis publicamente, seu trabalho é desenvolver um modelo de Machine Learning capaz de prever a eficiência de extintores de incêndio.
+#O conjunto de dados foi obtido como resultado dos testes de extinção de quatro chamas de combustíveis diferentes com um sistema de extinção de ondas sonoras. O sistema de extinção de incêndio por ondas sonoras consiste em 4 subwoofers com uma potência total de 4.000 Watts. Existem dois amplificadores que permitem que o som chegue a esses subwoofers como
+#amplificado. A fonte de alimentação que alimenta o sistema e o circuito do filtro garantindo que as frequências de som sejam transmitidas adequadamente para o sistema está localizada dentro da unidade de controle. Enquanto o computador é usado como fonte de frequência, o anemômetro foi usado para medir o fluxo de ar resultante das ondas sonoras durante a fase de extinção da chama e um decibelímetro para medir a intensidade do som. Um termômetro infravermelho foi utilizado para medir a temperatura da chama e da lata de combustível, e uma câmera é instalada para detectar o tempo de extinção da chama. Um total de 17.442 testes foram realizados com esta configuração experimental. Os experimentos foram planejados da seguinte forma:
+#o Três diferentes combustíveis líquidos e combustível GLP foram usados para criar a chama.
+#o 5 tamanhos diferentes de latas de combustível líquido foram usados para atingir diferentes tamanhos de chamas.
+#o O ajuste de meio e cheio de gás foi usado para combustível GLP.
+#Durante a realização de cada experimento, o recipiente de combustível, a 10 cm de distância, foi movido para frente até 190 cm, aumentando a distância em 10 cm a cada vez. Junto com o recipiente de combustível, o anemômetro e o decibelímetro foram movidos para frente nas mesmas dimensões.
+#Experimentos de extinção de incêndio foram conduzidos com 54 ondas sonoras de frequências diferentes em cada distância e tamanho de chama.
+#Ao longo dos experimentos de extinção de chama, os dados obtidos de cada dispositivo de medição foram registrados e um conjunto de dados foi criado. O conjunto de dados inclui as características do tamanho do recipiente de combustível representando o tamanho da chama, tipo de combustível, frequência, decibéis, distância, fluxo de ar e extinção da chama. Assim, 6 recursos de entrada e 1 recurso de saída serão usados no modelo que você vai construir.
+#A coluna de status (extinção de chama ou não extinção da chama) pode ser prevista usando os seis recursos de entrada no conjunto de dados. Os recursos de status e combustível são categóricos, enquanto outros recursos são numéricos.
+#Seu trabalho é construir um modelo de Machine Learning capaz de prever, com base em novos dados, se a chama será extinta ou não ao usar um extintor de incêndio.
+
+#Lembrando que este é um projeto fornecido pela Data Science Academy, onde o aluno é livre para solucionar o problema da forma que achar mais adequada, tendo um feedback por parte do fornecedor do projedo do quão acertivo o aluno foi para resolver o problema.
+
+#EN:#Business problem: The extinguisher hydrostatic test is a procedure provided for by the standards of ABNT NBR 12962/2016, which determines that all extinguishers must be tested every five years, with the purpose of identifying possible leaks, in addition to also checking the resistance of the extinguisher material.
+#With this, the hydrostatic extinguishing test can be carried out at low and high pressure, in accordance with these standards in question. The procedure is carried out by technical professionals in the field and using specific equipment specific to the test, as they must provide accurate results.
+#Would it be possible to use Machine Learning to predict the operation of a fire extinguisher based on computer simulations and thus include an additional layer of safety in a company's operations?
+#Using publicly available real data, your job is to develop a Machine Learning model capable of predicting the efficiency of fire extinguishers.
+#The data set was obtained as a result of extinguishing tests on four different fuel flames with a sound wave extinguishing system. The sound wave fire extinguishing system consists of 4 subwoofers with a total power of 4,000 Watts. There are two amplifiers that allow the sound to reach these subwoofers as
+#amplified. The power supply that powers the system and filter circuit ensuring that the frequencies of some transmissions are specific to the system is located within the control unit. While the computer is used as the frequency source, the anemometer was used to measure the airflow resulting from the sound waves during the flame extinction phase and a decibel meter to measure the sound intensity. An infrared conversation was used to measure the temperature of the flame and the fuel can, and a camera is installed to detect the flame extinction time. A total of 17,442 tests were performed with this experimental setup. The experiments were planned as follows:
+#o Three different liquid fuels and LPG fuels were used to create the flame.
+#o 5 different sizes of liquid fuel cans were used to achieve different sizes of flames.
+#o Half and full gas setting was used for LPG fuel.
+#During each experiment, the fuel container, 10 cm away, was moved forward up to 190 cm, increasing the distance by 10 cm each time. Along with the fuel container, the anemometer and decibel meter were moved forward in the same dimensions.
+#Fire extinguishing experiments were conducted with 54 sound waves of different frequencies at each distance and flame size.
+#Throughout the flame extinguishing experiments, data obtained from each measuring device was recorded and a data set was created. The dataset includes fuel container size characteristics representing flame size, fuel type, frequency, decibels, distance, airflow, and flame extinction. Thus, 6 input features and 1 output feature will be used in the model you are going to build.
+#The status column (flame extinguishing or flame non-extinguishing) can be predicted using the six input features in the dataset. Status and fuel features are categorical, while other features are numeric.
+#Your job is to build a Machine Learning model capable of predicting, based on new data, whether or not the flame will be extinguished when using a fire extinguisher.
+
+#Remember that this is a project provided by Data Science Academy, where the student is free to solve the problem in the way they see fit, receiving feedback from the project supplier on how successful the student was in solving the problem.
+
 library(DataExplorer)
 library(SmartEDA)
 library(dataMaid)
