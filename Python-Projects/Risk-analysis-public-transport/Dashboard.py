@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+import os
 import streamlit as st
 import pandas as pd 
 import numpy as np 
@@ -16,6 +17,8 @@ st.set_page_config(
     page_icon="🚌",
     layout="wide",
     initial_sidebar_state="expanded")
+
+path = os.path.dirname(__file__)
 
 #Load data
 df = pd.read_csv('data/tfl_bus_safety.csv', sep = ',')
