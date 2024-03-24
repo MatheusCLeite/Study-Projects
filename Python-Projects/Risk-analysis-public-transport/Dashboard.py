@@ -18,10 +18,8 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded")
 
-path = os.path.dirname(__file__)
-
 #Load data
-df = pd.read_csv('data/tfl_bus_safety.csv', sep = ',')
+df = pd.read_csv('Python-Projects/Risk-analysis-public-transport/data/tfl_bus_safety.csv', sep = ',')
 
 # Sidebar
 with st.sidebar:
