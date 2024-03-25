@@ -13,7 +13,7 @@ import calendar
 import locale 
 #Page configuration
 st.set_page_config(
-    page_title="Public Transpor Risk Analysis Dashboard",
+    page_title="Análise de Risco em Transporte Público",
     page_icon="🚌",
     layout="wide",
     initial_sidebar_state="expanded")
@@ -23,20 +23,20 @@ df = pd.read_csv('Python-Projects/Risk-analysis-public-transport/data/tfl_bus_sa
 
 # Sidebar
 with st.sidebar:
-    st.title("🚌 Public Transport Risk Analysis Dashboard")
+    st.title("🚌 Análise de Risco em Transporte Público")
     
     year_list = list(df.year.unique())[::-1]
-    year_list = year_list + ["All Period"]
-    selected_year = st.selectbox('Select a year', year_list)
-    if selected_year != "All Period":
+    year_list = year_list + ["Período Completo"]
+    selected_year = st.selectbox('Selecione um ano', year_list)
+    if selected_year != "Período Completo":
         df_selected_year = df[df.year == selected_year]
     else:
         df_selected_year = df
     color_theme_list = ['pastel','dark', 'flare', 'cividis', 'husl', 'inferno', 'Set2', 'light:#5A9','viridis']
-    selected_color_theme = st.selectbox('Select a color theme', color_theme_list)
+    selected_color_theme = st.selectbox('Escolha uma paleta de cores', color_theme_list)
 
     opcao_analyse = st.sidebar.selectbox(
-    "Kind of Data analyse",
+    "Tipo de Análise",
     ["Quantidade de Incidentes por Gênero", "Quantidade de Incidentes por Faixa Etária", "Percentual por Tipo de Incidente","Evolução de Incidentes por Mês ao Longo do Tempo","Maior número de incidentes envolvendo pessoas do sexo feminino","Média Mensal de Acidentes","Total de Incidentes Tratados no Local por Gênero","Quantidade de Incidentes com Idosos","Quantidade de incidentes por Operador","Total de Incidentes Ocorridos Envolvendo Ciclistas"]
 )
 col = st.columns((1.5, 4.5, 2), gap='medium')
@@ -93,7 +93,7 @@ if opcao_analyse == "Evolução de Incidentes por Mês ao Longo do Tempo":
         plt.xlabel('Data')
         plt.ylabel('Número de Incidentes')
         plt.xticks(rotation = 45)
-        if selected_year == "All Period":
+        if selected_year == "Período Completo":
             plt.xticks(incidentes_tempo['date_of_incident'].tolist()[0::6])
         plt.show()
         st.pyplot(plot.get_figure())    
@@ -109,7 +109,7 @@ if opcao_analyse == "Maior número de incidentes envolvendo pessoas do sexo femi
         plt.xlabel('Data')
         plt.ylabel('Número de Incidentes')
         plt.xticks(rotation = 45)
-        if selected_year == "All Period":
+        if selected_year == "Período Completo":
             plt.xticks(collision_fem_gr['date_of_incident'].tolist()[0::6])
         plt.show()
         plt.title("Maior número de incidentes envolvendo pessoas do sexo feminino")
