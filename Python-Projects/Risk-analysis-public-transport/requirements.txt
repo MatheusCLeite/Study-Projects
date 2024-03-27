@@ -7,5 +7,4 @@ transformers==4.39.1
 ctransformers==0.2.27
 langchain==0.1.12
 langchain-community==0.0.29
-tensorflow==2.16.1
 torch==2.2.1
