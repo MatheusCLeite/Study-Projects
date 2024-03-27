@@ -3,3 +3,7 @@ numpy == 1.24.3
 pandas == 2.0.3
 seaborn == 0.12.2
 path
+transformers==4.39.1
+ctransformers==0.2.27
+langchain==0.1.12
+langchain-community==0.0.29
