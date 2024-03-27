@@ -8,3 +8,6 @@ ctransformers==0.2.27
 langchain==0.1.12
 langchain-community==0.0.29
 tensorflow==2.16.1
+torch==2.2.1+cu118
+torchaudio==2.2.1+cu118
+torchvision==0.17.1+cu118
