@@ -1,5 +1,4 @@
 .streamlit/
-requirements.txt
 temp_audio.wav
 Untitled2.ipynb
 Utils.ipynb

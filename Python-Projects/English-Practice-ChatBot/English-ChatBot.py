@@ -1,9 +1,11 @@
 import os 
 import streamlit as st
+import sqlite3
 from Utils import transcribe, text_speech, PromptRetriever
 from audio_recorder_streamlit import audio_recorder
 
-
+__import__('pysqlite3')
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 repo_id = "mistralai/Mixtral-8x7B-Instruct-v0.1"
 api_token = st.secrets['HUGGINGFACEHUB_API_TOKEN']
 prompt_retriever = PromptRetriever(repo_id, api_token)
