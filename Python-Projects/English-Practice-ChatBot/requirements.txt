@@ -6,3 +6,4 @@ langchain-text-splitters==0.2.1
 streamlit==1.29.0
 bs4==0.0.2
 pysqlite3-binary
+audio_recorder_streamlit
